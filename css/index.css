@@ -79,6 +79,9 @@ body {
     from {right: 0px;}
     to {right: 300px;}
 }
+input{
+    background-color: rgb(37, 0, 160);
+}
 .footer {
 	position: fixed;
 	left: 0;
@@ -200,7 +203,6 @@ body {
 }
 #inputRat{
 	width: 100px;
-	background-color: rgb(0, 1, 37);
 }
 .money{
 	margin-left:120px;
@@ -208,7 +210,6 @@ body {
 }
 #inputCom{
 	width: 78px;
-	background-color: rgb(0, 1, 37);
 }
 .inputUp{
 	width: 195	px;
