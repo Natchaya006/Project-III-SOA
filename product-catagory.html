@@ -30,6 +30,12 @@
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="username" role="presentation">
+                        <a href="">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <b>Natchaya</b>
+                        </a>
+                    </li>
                     <li class="active" role="presentation">
                         <a href="product-catagory.html">
                             <span class="glyphicon glyphicon-home"></span>
@@ -48,17 +54,13 @@
                             <b>Logout</b>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <div class="container-fluid" id="containHome">
         <div class="row" id="rowHome">
-            <div class="col-lg-12">
-                <h1>
-                    <b>Product Catagory</b>
-                </h1>
-            </div>
             <div class="col-lg-3 showProduct popup">
                 <div id="title">
                     <h3>
@@ -77,15 +79,31 @@
                             <h4>Price : 31 bath</h4>
                         </li>
                         <li>
-                            <button type="button" value="1" class="btn .btn-xs btn-success">Add Chart</button>
-                            <button type="button" value="1" class="btn .btn-xs btn-info">Review</button>
+                            <button id="addChart" type="button" value="1" class="btn .btn-xs btn-success">Add Chart</button>
+
                         </li>
                     </ul>
                 </div>
                 <div id="review">
                     <ul class="list-inline">
-                        <li><span class="glyphicon glyphicon-star"></span><b>Rating</b> : 4/5 </li>
-                        <li><span class="glyphicon glyphicon-comment"></span><b>Comment</b> : good, poor, bad, not bad, nice, well done</li>
+                        <li>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <b>Rating</b> : 4/5 </li>
+                        <li>
+                            <span class="glyphicon glyphicon-comment"></span>
+                            <b>Comment</b> : good, poor, bad, not bad, nice, well done</li>
+                        <li>
+                            <b>Rating?</b> :
+                            <input id="inputRat" type="text">&nbsp;*(0-5)</li>
+                        <br>
+                        <p></p>
+                        <li>
+                            <b>Comment?</b> :
+                            <input id="inputCom" type="text">
+                        </li>
+                        <li>
+                            <button id="reviewProduct" type="button" value="1" class="btn .btn-xs btn-info">Review</button>
+                        </li>
                     </ul>
                 </div>
             </div>

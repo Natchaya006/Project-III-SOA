@@ -33,6 +33,11 @@ $(function () {
 	$(".showProduct").mouseout(function () {
 		$(".showProduct").css("background-color", "");
 	});
-	$(".showProduct").click(function (e) {});
+	$("#addChart").click(function (e){
+
+	});
+	$("#addChart").click(function (e){
+
+	});
 	//----------------------------------------------------
 });

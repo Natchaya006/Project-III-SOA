@@ -5,6 +5,7 @@ body {
 #containHome {
 	background-color: rgba(0, 0, 0, 0.603);
 	margin-top: 100px;
+	margin-bottom: 50px;
 	margin-left: 50px;
 	margin-right: 50px;
 	border-radius: 25px;
@@ -120,7 +121,14 @@ body {
 	text-transform: uppercase;
 	border-color: #59B2E6;
 }
-
+#inputRat{
+	width: 100px;
+	background-color: rgb(0, 1, 37);
+}
+#inputCom{
+	width: 78px;
+	background-color: rgb(0, 1, 37);
+}
 .btn-login:hover,
 .btn-login:focus {
 	color: #fff;
