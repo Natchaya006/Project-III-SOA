@@ -14,21 +14,20 @@ $(function () {
 		$(this).addClass('active');
 		e.preventDefault();
 	});
-	// $("#login-submit").click(function () {
-	// 	var usernameInput = $("#username").val();
-	// 	var passwordInput = $("#password").val();
-	// 	var urlGetAllCustomer = "https://customer-api-shopping.herokuapp.com/api/customers";
-	// 	$.ajax({
-	// 		type: "GET",
-	// 		url: urlGetAllCustomer,
-	// 		dataType: "json",
-	// 		success: function (data) {
-	// 			alert(data);
-	// 		}
-	// 	});
-	// });
+	$("#login-submit").click(function () {
+		var usernameInput = $("#username").val();
+		var passwordInput = $("#password").val();
+		var urlGetAllCustomer = "https://customer-api-shopping.herokuapp.com/api/customers";
+		$.ajax({
+			type: "GET",
+			url: urlGetAllCustomer,
+			dataType: "json",
+			success: function (data) {
+				alert(data);
+			}
+		});
+	});
 	// $("#register-submit").click(function (e) {
-	// 	var usernameRegist = $("#username").val();
 	// 	var fitstnameRegist = $("#firstName").val();
 	// 	var passwordRegist = $("#password").val();
 	// 	var addressRegist = $("#address").val();

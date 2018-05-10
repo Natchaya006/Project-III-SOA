@@ -32,6 +32,15 @@ body {
 	border-radius: 25px;
 	color: white;
 }
+#containPayment {
+	background-color: rgba(0, 0, 0, 0.603);
+	margin-top: 70px;
+	margin-bottom: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border-radius: 25px;
+	color: white;
+}
 .show {
 	width: 280px;
 	border-radius: 25px;
@@ -95,6 +104,15 @@ body {
 
 #rowHome {
 	height: 530px;
+}
+.title {
+	margin-left: 50px;
+}
+.tableshow{
+	margin-left:50px;
+	width: 93%;
+	background-color: rgba(255, 255, 255, 0.733);
+	color: black;
 }
 
 .panel-login {
