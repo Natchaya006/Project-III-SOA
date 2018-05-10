@@ -3,23 +3,37 @@ body {
 }
 
 #containHome {
-	background-color: rgba(243, 243, 243, 0.781);
+	background-color: rgba(0, 0, 0, 0.603);
 	margin-top: 100px;
 	margin-left: 50px;
 	margin-right: 50px;
 	border-radius: 25px;
+	color: white;
 }
 
-.showProduct{
-	background-color: rgba(243, 243, 243, 0.452);
+.show {
+	width: 280px;
 	border-radius: 25px;
-	margin-left: 75px;
-	margin-top: 30px;
-	margin-bottom: 10px;
-
 }
 
-#rowHome{
+.btn-success {
+	background-color: rgb(68, 216, 0);
+	border: rgb(68, 216, 0);
+}
+
+.btn-info {
+	background-color: rgb(23, 46, 255);
+	border: rgb(23, 46, 255);
+}
+
+.showProduct {
+	border-radius: 25px;
+	margin-left: 80px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#rowHome {
 	padding: 10px;
 }
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--<script src="js/index.js"></script>-->
+    <script src="js/index.js"></script>
     <title>Home - Shopping Center Online</title>
 </head>
 
@@ -59,49 +59,34 @@
                     <b>Product Catagory</b>
                 </h1>
             </div>
-            <div class="col-lg-3 showProduct">
+            <div class="col-lg-3 showProduct popup">
                 <div id="title">
-                    <h3>Product1</h3>
+                    <h3>
+                        <b>
+                            <u>Sakura</u>
+                        </b>
+                    </h3>
                 </div>
-                <div id="pic">IMG</div>
+                <div id="pic">
+                    <img class="show" src="https://secure.ap-tescoassets.com/assets/TH/031/8850805000031/ShotType1_328x328.jpg" alt="Sakura">
+                </div>
+                <p></p>
                 <div id="desc">
-                    <p>Price : 50 bath</p>
+                    <ul class="list-inline">
+                        <li>
+                            <h4>Price : 31 bath</h4>
+                        </li>
+                        <li>
+                            <button type="button" value="1" class="btn .btn-xs btn-success">Add Chart</button>
+                            <button type="button" value="1" class="btn .btn-xs btn-info">Review</button>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-lg-3 showProduct">
-                <div id="title">
-                    <h3>Product1</h3>
-                </div>
-                <div id="pic">IMG</div>
-                <div id="desc">
-                    <p>Price : 50 bath</p>
-                </div>
-            </div>
-            <div class="col-lg-3 showProduct">
-                <div id="title">
-                    <h3>Product1</h3>
-                </div>
-                <div id="pic">IMG</div>
-                <div id="desc">
-                    <p>Price : 50 bath</p>
-                </div>
-            </div>
-            <div class="col-lg-3 showProduct">
-                <div id="title">
-                    <h3>Product1</h3>
-                </div>
-                <div id="pic">IMG</div>
-                <div id="desc">
-                    <p>Price : 50 bath</p>
-                </div>
-            </div>
-            <div class="col-lg-3 showProduct">
-                <div id="title">
-                    <h3>Product1</h3>
-                </div>
-                <div id="pic">IMG</div>
-                <div id="desc">
-                    <p>Price : 50 bath</p>
+                <div id="review">
+                    <ul class="list-inline">
+                        <li><span class="glyphicon glyphicon-star"></span><b>Rating</b> : 4/5 </li>
+                        <li><span class="glyphicon glyphicon-comment"></span><b>Comment</b> : good, poor, bad, not bad, nice, well done</li>
+                    </ul>
                 </div>
             </div>
         </div>
