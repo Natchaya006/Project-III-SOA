@@ -1,7 +1,16 @@
 body {
 	background: url('http://www.wallpaperup.com/uploads/wallpapers/2012/10/21/20181/cad2441dd3252cf53f12154412286ba0.jpg');
 }
-
+.vl {
+    border-left: 5px solid rgb(255, 255, 255);
+	height: 500px;
+	margin: 10px;
+	margin-left: 105px;
+}
+.account{
+	margin-left:80px;
+	margin-top:33px ;
+}
 .closebtn:hover {
     color: black;
 }	
@@ -14,7 +23,15 @@ body {
 	border-radius: 25px;
 	color: white;
 }
-
+#containAccount {
+	background-color: rgba(0, 0, 0, 0.603);
+	margin-top: 70px;
+	margin-bottom: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
+	border-radius: 25px;
+	color: white;
+}
 .show {
 	width: 280px;
 	border-radius: 25px;
@@ -167,9 +184,19 @@ body {
 	width: 100px;
 	background-color: rgb(0, 1, 37);
 }
+.money{
+	margin-left:120px;
+	margin-top:33px
+}
 #inputCom{
 	width: 78px;
 	background-color: rgb(0, 1, 37);
+}
+.inputUp{
+	width: 195	px;
+}
+.inputAcc{
+	width: 255px;
 }
 .btn-login:hover,
 .btn-login:focus {
