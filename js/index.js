@@ -93,4 +93,50 @@ $(function () {
 
 	});
 	//----------------------------------------------------
+	//-----------------------Account----------------------
+	$.ajax({
+		/*add new account by if before*/
+		type: "GET",
+		url: "https://api-payment.herokuapp.com/api/user/50",
+		dataType: "json",
+		success: function (data) {
+			console.log(data);
+			$("#balance").val(data[0].balance);
+		},
+		error: function (data) {
+			$.ajax({
+				type: "POST",
+				url: "https://api-payment.herokuapp.com/api/user/new",
+				dataType: "json",
+				data:{
+					userId: 50,
+					userName: "testPin"
+				},
+				success: function (data) {
+					console.log(data);
+					$("#balance").val(data[0].balance);
+				}
+			});
+		}
+	});
+
+	$.ajax({
+		/*get customer by ID*/
+		type: "GET",
+		url: "https://customer-api-shopping.herokuapp.com/api/customers/1",
+		dataType: "json",
+		success: function (data) {
+			$("#firstnameA").val(data.name);
+			$("#lastnameA").val(data.lastname);
+			$("#emailA").val(data.email);
+			$("#addressA").val(data.address);
+		}
+	});
+	$("#updateProfile").click(function () {
+
+	});
+	$("#addMoney").click(function () {
+
+	});
+	//----------------------------------------------------
 });
