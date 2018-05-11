@@ -1,5 +1,4 @@
 $(function () {
-	//---------------Login/Register-----------------------
 	$('#login-form-link').click(function (e) {
 		$("#login-form").delay(100).fadeIn(100);
 		$("#register-form").fadeOut(100);
@@ -15,128 +14,45 @@ $(function () {
 		e.preventDefault();
 	});
 	$("#login-submit").click(function () {
-		var usernameInput = $("#username").val();
-		var passwordInput = $("#password").val();
-		var urlGetAllCustomer = "https://customer-api-shopping.herokuapp.com/api/customers";
+		var usernameInput = $("#usernameL").val();
+		var passwordInput = $("#passwordL").val();
+		var urlGetAllCustomer = "https://customer-api-shopping.herokuapp.com/api/customers/" + usernameInput;
 		$.ajax({
 			type: "GET",
 			url: urlGetAllCustomer,
 			dataType: "json",
 			success: function (data) {
-				alert(data);
+				if (passwordInput == data.password) {
+					location.replace('product-catagory.html');
+					localStorage.setItem("id", usernameInput);
+					localStorage.setItem("name", data.name);
+					localStorage.setItem("password", data.password);
+				} else {
+					alert('Username or Password Wrong!');
+					location.reload();
+				}
 			}
 		});
 	});
-	// $("#register-submit").click(function (e) {
-	// 	var fitstnameRegist = $("#firstName").val();
-	// 	var passwordRegist = $("#password").val();
-	// 	var addressRegist = $("#address").val();
-	// 	var lastnameRegist = $("#lastName").val();
-	// 	var emailRegist = $("#email").val();
-	// 	var urlPostCustomer = "";
-	// 	$.ajax({
-	// 		type: "POST",
-	// 		url: urlPostCustomer,
-	// 		dataType: "json",
-	// 		data: {
-	// 			username: "John",
-	// 			time: "2pm"
-	// 		},
-	// 		success: function (data) {
-	// 			if (data.password == passwordInput) {
-	// 				alert("Register Complete!");
-	// 				location.reload();
-	// 			} else {
-	// 				alert('Something Wrong!');
-	// 			}
-	// 		}
-	// 	});
-	// });
-	//----------------------------------------------------
-	//---------------Product Show-------------------------
-	$.ajax({
-		type: "GET",
-		url: "https://productapi977377.herokuapp.com/Products.php/api/products",
-		dataType: "text",
-		success: function (data) {
-			var obj = jQuery.parseJSON(data);
-			for (i = 0; i < obj.length; i++) {
-				var id = obj[i].productID;
-				var title = obj[i].title;
-				var img = obj[i].picture;
-				var price = obj[i].price;
-				$('#rowHome').append('<div class="col-lg-3 showProduct"><div id="title">' +
-					'<h3><b><u>' + title + '</u></b></h3></div><div id="pic"><img class="show" src' +
-					'="' + img + '" alt="' + title + '"></div><p></p><div id="desc"><ul class="list-inline">' +
-					'<li><h4>Price : ' + price + ' bath</h4></li><li><button id="addChart" type="button"' +
-					' value="' + id + '" class="btn .btn-xs btn-success">Buy Now</button></li></ul>' +
-					'</div><div id="review"><ul class="list-inline"><li><span class=' +
-					'"glyphicon glyphicon-star"></span><b>Rating</b> : 4/5 </li><li><span class' +
-					'="glyphicon glyphicon-comment"></span><b>Comment</b> : well done</li><li><b>' +
-					'Rating?</b> : <input id="inputRat" type="text">&nbsp;*(0-5)</li><br><p></p><li>' +
-					'<b>Comment?</b> : <input id="inputCom" type="text"></li><li><button id=' +
-					'"reviewProduct" type="button" value="' + id + '" class="btn .btn-xs btn-info">Review' +
-					'</button></li></ul></div></div>');
+	$("#register-submit").click(function (e) {
+		var formdata = {
+			address: $("#addressR").val(),
+			email: $("#emailR").val(),
+			lastname: $("#lastnameR").val(),
+			name: $("#firstnameR").val(),
+			password: $("#passwordR").val(),
+			telno: $("#telNoR").val()
+		};
+		var urlPostCustomer = "https://customer-api-shopping.herokuapp.com/api/customers/";
+		$.ajax({
+			type: "POST",
+			url: urlPostCustomer,
+			dataType: "json",
+			contentType: "application/json",
+			data: formdata,
+			success: function (data) {
+				alert("Register Complete! ::: Username is " + data.id);
 			}
-		}
+		});
 	});
-	$(".showProduct").mouseover(function () {
-		$(".showProduct").css("background-color", "rgba(255, 255, 255, 0.164)");
-	});
-	$(".showProduct").mouseout(function () {
-		$(".showProduct").css("background-color", "");
-	});
-	$("#addChart").click(function (e) {
-
-	});
-	$("#addChart").click(function (e) {
-
-	});
-	//----------------------------------------------------
-	//-----------------------Account----------------------
-	$.ajax({
-		/*add new account by if before*/
-		type: "GET",
-		url: "https://api-payment.herokuapp.com/api/user/50",
-		dataType: "json",
-		success: function (data) {
-			console.log(data);
-			$("#balance").val(data[0].balance);
-		},
-		error: function (data) {
-			$.ajax({
-				type: "POST",
-				url: "https://api-payment.herokuapp.com/api/user/new",
-				dataType: "json",
-				data:{
-					userId: 50,
-					userName: "testPin"
-				},
-				success: function (data) {
-					console.log(data);
-					$("#balance").val(data[0].balance);
-				}
-			});
-		}
-	});
-
-	$.ajax({
-		/*get customer by ID*/
-		type: "GET",
-		url: "https://customer-api-shopping.herokuapp.com/api/customers/1",
-		dataType: "json",
-		success: function (data) {
-			$("#firstnameA").val(data.name);
-			$("#lastnameA").val(data.lastname);
-			$("#emailA").val(data.email);
-			$("#addressA").val(data.address);
-		}
-	});
-	$("#updateProfile").click(function () {
-
-	});
-	$("#addMoney").click(function () {
-
-	});
-	//----------------------------------------------------
 });
