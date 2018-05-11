@@ -34,16 +34,17 @@ $(function () {
 			}
 		});
 	});
+	//Problem! Can't Insert Customer. Error Bad Request!
 	$("#register-submit").click(function (e) {
-		var formdata = {
-			address: $("#addressR").val(),
-			email: $("#emailR").val(),
-			lastname: $("#lastnameR").val(),
-			name: $("#firstnameR").val(),
-			password: $("#passwordR").val(),
-			telno: $("#telNoR").val()
-		};
+		var formdata = {};
+		formdata.address = $("#addressR").val();
+		formdata.email = $("#emailR").val();
+		formdata.lastname = $("#lastnameR").val();
+		formdata.name = $("#firstnameR").val();
+		formdata.password = $("#passwordR").val();
+		formdata.telno = $("#telNoR").val();
 		var urlPostCustomer = "https://customer-api-shopping.herokuapp.com/api/customers/";
+		console.log(formdata);
 		$.ajax({
 			type: "POST",
 			url: urlPostCustomer,

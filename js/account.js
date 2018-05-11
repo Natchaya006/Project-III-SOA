@@ -35,6 +35,7 @@ $(function () {
             $("#telNoA").val(data.telno);
         }
     });
+    //Problem! Can't Insert Customer. Error Bad Request!
     $("#updateProfile").click(function () {
         var formdata = {
             id: localStorage.getItem("id"),
