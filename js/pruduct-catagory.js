@@ -39,10 +39,48 @@ $(function () {
                             '"reviewProduct' + id + '" type="button" value="' + id + '" class="btn .btn-xs btn-info re">Review' +
                             '</button></li></ul></div></div>');
                     }
+                    $("#reviewProduct1").click(function () {
+                        $.ajax({
+                            type: "GET",
+                            url: "https://pacific-peak-27279.herokuapp.com/api/ProductReview/",
+                            dataType: "json",
+                            contentType:"application/json",
+                            data: {
+                                "productID": 1,
+                                "rating": $("#inputRat").val(),
+                                "comment": $("#inputCom").val(),
+                                "reviewer": localStorage.getItem("id")
+                            },
+                            success: function (res) {
+                                alert('Review Complete');
+                                location.reload();
+                            }
+                        });
+                    });
+                    $("#addChart1").click(function () {
+                        $.ajax({
+                            type: "POST",
+                            url: "https://api-payment.herokuapp.com/api/payment/new",
+                            dataType: "json",
+                            contentType:"application/json",
+                            data: {
+                                "userId": localStorage.getItem("id"),
+                                "orderId": "001",
+                                "webName": "Shopping Center Online",
+                                "price": 30
+                            },
+                            success: function (res) {
+                                alert('Buy Complete');
+                                location.reload();
+                            }
+                        });
+                    });
                 }
             });
         }
     });
     // Problem! Logic for click button and get ProductID from button.
-    //So, I can't write use function Review and Buy Now.
+    // So, I can't write use function Review and Buy Now.
+    // I fixed problem by write each action by identify id but It's not good fix problem by have ProductID1 of Buy and Review is example..
+
 });
